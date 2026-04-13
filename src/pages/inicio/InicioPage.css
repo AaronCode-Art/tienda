@@ -1,0 +1,162 @@
+/* 1. Contenedores Globales */
+.inicio-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.contenido-principal {
+  flex: 1;
+  padding: 20px 0;
+  width: 100%;
+}
+
+/* 2. Secciones de Categoría */
+.seccion-productos-inicio {
+  margin-bottom: 60px;
+  width: 100%;
+  padding: 20px 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5) 0%, rgba(240, 249, 255, 0.3) 50%, rgba(255, 255, 255, 0.5) 100%);
+}
+
+.titulo-categoria {
+  text-align: center;
+  font-size: 2rem;
+  margin: 50px 0 30px 0;
+  font-weight: 800;
+  color: #333;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.titulo-categoria::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #44E2D1, #FF3B3B);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* 3. La Fila Horizontal (Contenedor Maestro) */
+.fila-productos {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Centra el botón verticalmente con las tarjetas */
+  justify-content: center; /* Mantiene las tarjetas al centro en pantallas grandes */
+  gap: 20px;
+  padding: 10px 20px;
+  
+  /* Permite scroll lateral si no caben los productos */
+  overflow-x: auto;
+  scrollbar-width: none; /* Oculta barra en Firefox */
+}
+
+.fila-productos::-webkit-scrollbar {
+  display: none; /* Oculta barra en Chrome/Safari */
+}
+
+/* 4. Estilo de la Tarjeta (Dentro de la fila) */
+.tarjeta-contenedor {
+  flex: 0 0 280px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border-radius: 25px;
+  padding: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
+  border: 2px solid transparent;
+}
+
+.tarjeta-contenedor:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+  border-color: rgba(68, 226, 209, 0.3);
+}
+
+/* 5. Botón "Ver Más" al final de la fila */
+.ver-mas {
+  background: linear-gradient(135deg, #FF3B3B 0%, #e02020 100%);
+  border: none;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 15px 25px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 25px;
+  box-shadow: 0 4px 15px rgba(255, 59, 59, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ver-mas:hover {
+  background: linear-gradient(135deg, #e02020 0%, #cc0000 100%);
+  transform: translateX(5px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 59, 59, 0.4);
+}
+
+.ver-mas span {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.ver-mas:hover span {
+  transform: translateX(3px);
+}
+
+/* 6. Ajustes para móviles */
+@media (max-width: 768px) {
+  .titulo-categoria {
+    font-size: 1.6rem;
+    margin: 40px 0 25px 0;
+  }
+
+  .titulo-categoria::after {
+    width: 40px;
+    height: 3px;
+  }
+
+  .fila-productos {
+    justify-content: flex-start;
+    padding-left: 20px;
+    gap: 15px;
+  }
+  
+  .tarjeta-contenedor {
+    flex: 0 0 240px;
+    padding: 12px;
+  }
+  
+  .ver-mas {
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .titulo-categoria {
+    font-size: 1.4rem;
+  }
+
+  .tarjeta-contenedor {
+    flex: 0 0 200px;
+    padding: 10px;
+  }
+
+  .ver-mas {
+    padding: 10px 15px;
+    font-size: 0.8rem;
+  }
+}

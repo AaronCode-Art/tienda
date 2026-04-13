@@ -1,0 +1,189 @@
+/* 1. LAYOUT MAESTRO MÁS AMPLIO */
+.productos-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff; /* Un blanco roto muy sutil */
+}
+
+.productos-layout-principal {
+  display: flex;
+  max-width: 1650px; /* Ancho extendido para que no se vea pegado */
+  margin: 0 auto;
+  padding: 50px 4%;
+  gap: 70px; /* Espacio masivo entre filtro y catálogo */
+  width: 100%;
+}
+
+/* 2. SIDEBAR ESTILO "CARD" MODERNA */
+.sidebar-filtros {
+  flex: 0 0 300px; /* Un poco más ancho */
+  position: sticky;
+  top: 30px;
+  height: fit-content;
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 24px; /* Bordes muy redondeados modernos */
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04); /* Sombra muy suave */
+  border: 1px solid #f0f0f0;
+}
+
+.titulo-filtro {
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+  color: #111;
+  text-transform: lowercase;
+}
+
+.grupo-filtros {
+  margin-bottom: 45px;
+}
+
+.grupo-filtros h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #aaa;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+/* 3. BOTONES DE CATEGORÍA ESTILO MINIMALISTA */
+.grupo-filtros ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.grupo-filtros li button {
+  background: transparent;
+  border: none;
+  padding: 12px 18px;
+  cursor: pointer;
+  color: #555;
+  font-size: 1rem;
+  font-weight: 500;
+  width: 100%;
+  text-align: left;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.grupo-filtros li button:hover {
+  background: #fdf2f2;
+  color: #ff3b3b;
+}
+
+.grupo-filtros li button.active {
+  background: #ff3b3b; /* Rojo vibrante S&O */
+  color: white;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(255, 59, 59, 0.2);
+}
+
+/* 4. MEDIDOR DE PRECIO (SLIDER PERSONALIZADO) */
+.price-slider-container {
+  padding: 0 10px;
+}
+
+.price-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 10px;
+  background: #eee;
+  outline: none;
+  margin: 25px 0;
+}
+
+/* El círculo del slider */
+.price-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  background: #ff3b3b;
+  border: 4px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s;
+}
+
+.price-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.price-labels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.current-price-badge {
+  color: #ff3b3b;
+  font-size: 1.2rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* 5. GRID DE PRODUCTOS (4 COLUMNAS LIMPIAS) */
+.catalogo-seccion {
+  flex: 1;
+}
+
+.titulo-pagina {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 50px;
+  color: #111;
+}
+
+.productos-grid-catalogo {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px; /* Mucho espacio entre tarjetas */
+  width: 100%;
+}
+
+/* 6. RESPONSIVO MODERNO */
+
+@media (max-width: 1400px) {
+  .productos-grid-catalogo {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1024px) {
+  .productos-layout-principal {
+    flex-direction: column;
+    gap: 40px;
+    padding: 30px 5%;
+  }
+
+  .sidebar-filtros {
+    flex: none;
+    width: 100%;
+    position: relative;
+    top: 0;
+    padding: 25px;
+  }
+
+  .grupo-filtros ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .grupo-filtros li button {
+    width: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .productos-grid-catalogo {
+    grid-template-columns: 1fr; /* 1 columna en móvil para que luzca la foto */
+  }
+}

@@ -1,0 +1,91 @@
+.footer-principal {
+  background-color: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  padding: 3rem 1.5rem;
+  width: 100%;
+}
+
+.footer-contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+  /* Configuración base: 1 columna para móviles 📱 */
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.footer-logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.footer-logo span {
+  color: #ff3b3b; /* El rojo de tu marca 🔴 */
+}
+
+.footer-descripcion {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+.footer-titulo {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.footer-lista {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-lista li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-lista a {
+  text-decoration: none;
+  color: #4b5563;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.footer-lista a:hover {
+  color: #74ebe0; /* Turquesa al pasar el mouse 🖱️ */
+}
+
+.footer-redes {
+  display: flex;
+  gap: 1rem;
+  color: #6b7280;
+}
+
+.footer-copyright {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid #f3f4f6;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #9ca3af;
+}
+
+/* --- RESPONSIVO --- */
+
+/* Tablets (2 columnas) 📑 */
+@media (min-width: 640px) {
+  .footer-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Escritorio (4 columnas) 💻 */
+@media (min-width: 1024px) {
+  .footer-contenedor {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
