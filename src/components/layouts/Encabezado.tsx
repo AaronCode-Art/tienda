@@ -80,7 +80,7 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
             <Link to="/productos" className="btn-banner-action">ver catálogo</Link>
           </div>
           <div className="banner-image-side">
-            <img src="/src/assets/hero-hardware.png" alt="Hardware" className="hardware-render" />
+            <img src="../src/assets/hero-hardware.png" alt="Hardware" className="hardware-render" />
           </div>
         </main>
       )}
