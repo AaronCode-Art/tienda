@@ -1,4 +1,6 @@
-#estructura del proyecto
+# 🛒 Página web e-commerce integral para la tienda S&O presencial de componentes y productos técnologicos — Proyecto Completo (React + TypeScript)
+
+# Estructura del proyecto
 
 components: Piezas reutilizables de la interfaz (botones, tarjetas de productos, barras de navegación).
 
