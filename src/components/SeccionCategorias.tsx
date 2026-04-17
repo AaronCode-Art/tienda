@@ -1,7 +1,7 @@
 // components/SeccionCategorias.tsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import type { Categoria } from '../types';
+import type { Categoria } from '../types/producto';
 import './SeccionCategorias.css'; // Si quieres agregar estilos específicos
 
 interface PropsCategorias {

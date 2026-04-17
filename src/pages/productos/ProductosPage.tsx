@@ -6,7 +6,7 @@ import { useProductos } from '../../hooks/useProductos';
 import './productospage.css';
 
 const ProductosPage: React.FC = () => {
-  const { productos } = useProductos();
+  const { productos, obtenerPorCategoria } = useProductos();
   
   // 1. Estados para los filtros
   const [categoria, setCategoria] = useState<'todos' | 'pc' | 'laptop' | 'accesorio'>('todos');
@@ -14,12 +14,9 @@ const ProductosPage: React.FC = () => {
 
   // 2. Lógica de filtrado combinada (Categoría + Precio)
   const productosFiltrados = useMemo(() => {
-    return productos.filter(p => {
-      const coincideCategoria = categoria === 'todos' || p.categoria === categoria;
-      const coincidePrecio = p.precio <= precioMax;
-      return coincideCategoria && coincidePrecio;
-    });
-  }, [productos, categoria, precioMax]);
+    const base = categoria === 'todos' ? productos : obtenerPorCategoria(categoria);
+    return base.filter((p) => p.precio <= precioMax);
+  }, [productos, categoria, precioMax, obtenerPorCategoria]);
 
   return (
     <div className="productos-page">

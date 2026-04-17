@@ -11,7 +11,9 @@ const ProductoporCatalogo: React.FC = () => {
   const { obtenerCategorias, obtenerPorCategoria } = useProductos();
 
   const categorias = obtenerCategorias();
-  const categoria = categorias.find((item) => item.id === categoriaId);
+  const categoria = categorias.find(
+    (item) => item.id === categoriaId || item.slug === categoriaId,
+  );
   const productosCategoria = categoriaId ? obtenerPorCategoria(categoriaId) : [];
 
   return (

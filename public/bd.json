@@ -1,0 +1,225 @@
+{
+  "categorias": [
+    {
+      "id": "c72941",
+      "nombre": "Repuestos PC",
+      "imagenUrl": "/imagenes/categorias/pc.jpg"
+    },
+    {
+      "id": "c10385",
+      "nombre": "Repuestos laptops",
+      "imagenUrl": "/imagenes/categorias/laptop.jpg"
+    },
+    {
+      "id": "c55290",
+      "nombre": "Accesorios",
+      "imagenUrl": "/imagenes/categorias/accesorios.jpg"
+    }
+  ],
+  "productos": [
+    {
+      "id": "p88321",
+      "categoria": "c72941",
+      "marca": "DeepCool",
+      "modelo": "Beta 10",
+      "nombre": "COOLER PARA PROCESADOR DEEPCOOL BETA 10",
+      "descripcion": "Disipador de alta eficiencia.",
+      "precio": 39.0,
+      "stock": 15,
+      "imagenUrl": "/imagenes/productos/pc/cooler.png"
+    },
+    {
+      "id": "p14902",
+      "categoria": "c72941",
+      "marca": "EVGA",
+      "modelo": "600W W1",
+      "nombre": "FUENTE DE PODER EVGA 600W 80 PLUS",
+      "precio": 210.0,
+      "stock": 8,
+      "imagenUrl": "/imagenes/productos/p2.jpg",
+      "descripcion": "Energía confiable."
+    },
+    {
+      "id": "p66237",
+      "categoria": "c72941",
+      "marca": "Kingston",
+      "modelo": "Fury 16GB",
+      "nombre": "RAM DDR4 KINGSTON FURY 16GB 3200MHz",
+      "precio": 185.0,
+      "stock": 20,
+      "imagenUrl": "/imagenes/productos/p3.jpg",
+      "descripcion": "Velocidad extrema."
+    },
+    {
+      "id": "p31094",
+      "categoria": "c72941",
+      "marca": "Western Digital",
+      "modelo": "Blue 1TB",
+      "nombre": "DISCO DURO WD BLUE 1TB SATA",
+      "precio": 165.0,
+      "stock": 12,
+      "imagenUrl": "/imagenes/productos/p4.jpg",
+      "descripcion": "Almacenamiento sólido."
+    },
+    {
+      "id": "p92834",
+      "categoria": "c72941",
+      "marca": "MSI",
+      "modelo": "H510M-A",
+      "nombre": "PLACA MADRE MSI H510M-A PRO",
+      "precio": 320.0,
+      "stock": 5,
+      "imagenUrl": "/imagenes/productos/p5.jpg",
+      "descripcion": "Base estable para tu PC."
+    },
+    {
+      "id": "p22394",
+      "categoria": "c10385",
+      "marca": "Crucial",
+      "modelo": "DDR4 8GB",
+      "nombre": "RAM LAPTOP CRUCIAL 8GB 3200MHz",
+      "precio": 95.0,
+      "stock": 25,
+      "imagenUrl": "/imagenes/productos/p9.jpg",
+      "descripcion": "Upgrade esencial."
+    },
+    {
+      "id": "p60218",
+      "categoria": "c10385",
+      "marca": "WD",
+      "modelo": "Green 480GB",
+      "nombre": "SSD M.2 WD GREEN 480GB",
+      "precio": 145.0,
+      "stock": 15,
+      "imagenUrl": "/imagenes/productos/p10.jpg",
+      "descripcion": "Arranque veloz."
+    },
+    {
+      "id": "p81230",
+      "categoria": "c10385",
+      "marca": "Generic",
+      "modelo": "Universal",
+      "nombre": "CARGADOR UNIVERSAL LAPTOP 90W",
+      "precio": 75.0,
+      "stock": 30,
+      "imagenUrl": "/imagenes/productos/p11.jpg",
+      "descripcion": "Compatibilidad total."
+    },
+    {
+      "id": "p39041",
+      "categoria": "c10385",
+      "marca": "Samsung",
+      "modelo": "980 Pro",
+      "nombre": "SSD NVMe SAMSUNG 980 PRO 1TB",
+      "precio": 450.0,
+      "stock": 6,
+      "imagenUrl": "/imagenes/productos/p13.jpg",
+      "descripcion": "Máxima velocidad NVMe."
+    },
+    {
+      "id": "p22485",
+      "categoria": "c55290",
+      "marca": "Logitech",
+      "modelo": "G305",
+      "nombre": "MOUSE GAMER LOGITECH G305",
+      "precio": 155.0,
+      "stock": 20,
+      "imagenUrl": "/imagenes/productos/p17.jpg",
+      "descripcion": "Inalámbrico veloz."
+    },
+    {
+      "id": "p33102",
+      "categoria": "c55290",
+      "marca": "Redragon",
+      "modelo": "K552",
+      "nombre": "TECLADO MECANICO REDRAGON K552 RGB",
+      "precio": 180.0,
+      "stock": 15,
+      "imagenUrl": "/imagenes/productos/p18.jpg",
+      "descripcion": "Switches resistentes."
+    },
+    {
+      "id": "p61234",
+      "categoria": "c55290",
+      "marca": "HyperX",
+      "modelo": "Cloud Stinger",
+      "nombre": "AUDIFONOS HYPERX CLOUD STINGER",
+      "precio": 165.0,
+      "stock": 10,
+      "imagenUrl": "/imagenes/productos/p19.jpg",
+      "descripcion": "Comodidad y audio claro."
+    },
+    {
+      "id": "p55821",
+      "categoria": "c55290",
+      "marca": "Ugreen",
+      "modelo": "Hub USB-C",
+      "nombre": "HUB USB-C UGREEN 4 PUERTOS",
+      "precio": 65.0,
+      "stock": 25,
+      "imagenUrl": "/imagenes/productos/p21.jpg",
+      "descripcion": "Expande tu conectividad."
+    },
+    {
+      "id": "p12873",
+      "categoria": "c55290",
+      "marca": "Sony",
+      "modelo": "DualSense",
+      "nombre": "MANDO PS5 DUALSENSE WHITE",
+      "precio": 280.0,
+      "stock": 5,
+      "imagenUrl": "/imagenes/productos/p22.jpg",
+      "descripcion": "Control de nueva generación."
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "u1",
+      "nombre": "Juan",
+      "apellido": "Pérez",
+      "dni": "12345678",
+      "distrito": "Miraflores",
+      "direccion": "Av. Larco 456",
+      "referencia": "A espaldas del Parque Kennedy",
+      "codigo_postal": "15074",
+      "correo": "juan.perez@email.com",
+      "contrasena": "clave123"
+    },
+    {
+      "id": "u2",
+      "nombre": "Maria",
+      "apellido": "García",
+      "dni": "87654321",
+      "distrito": "Los Olivos",
+      "direccion": "Jr. Antúnez de Mayolo 1020",
+      "referencia": "Frente al mercado central",
+      "codigo_postal": "15301",
+      "correo": "m.garcia@email.com",
+      "contrasena": "maria2024"
+    },
+    {
+      "id": "u3",
+      "nombre": "Carlos",
+      "apellido": "Rodríguez",
+      "dni": "45678912",
+      "distrito": "Santiago de Surco",
+      "direccion": "Calle Las Gardenias 123",
+      "referencia": "Cerca al CC Jockey Plaza",
+      "codigo_postal": "15038",
+      "correo": "carlos.rod@email.com",
+      "contrasena": "surco_puntos"
+    },
+    {
+      "id": "u4",
+      "nombre": "Ana",
+      "apellido": "López",
+      "dni": "23456789",
+      "distrito": "San Miguel",
+      "direccion": "Av. La Marina 2500",
+      "referencia": "Cerca a Plaza San Miguel",
+      "codigo_postal": "15088",
+      "correo": "ana.lopez@email.com",
+      "contrasena": "admin_ana"
+    }
+  ]
+}

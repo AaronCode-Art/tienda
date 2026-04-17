@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
 import './encabezado.css';
 
 interface BannerProps {
@@ -9,15 +10,40 @@ interface BannerProps {
 
 const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<number | null>(null);
+  const location = useLocation();
+  const { usuario, logout } = useAuth();
+
+  const fromState = { state: { from: location.pathname } };
+  const initial = usuario?.nombre?.charAt(0).toUpperCase() ?? '';
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+    }
+    setDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setDropdownOpen(false);
+    }, 10000); // 10 segundos
+  };
+
+  useEffect(() => {
+    return () => {
+      if (dropdownTimeoutRef.current) {
+        clearTimeout(dropdownTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className={`hero-master-container ${!showBanner ? 'no-banner' : ''} ${isMenuOpen ? 'nav-is-open' : ''}`}>
-      
-      {/* Fondo oscuro al abrir menú */}
       <div className="menu-overlay" onClick={() => setIsMenuOpen(false)}></div>
 
       <header className="hero-header">
-        {/* IZQUIERDA: Logo */}
         <div className="header-left">
           <Link to="/" className="logo-link">
             <span className="logo-brand">S&O</span>
@@ -25,7 +51,6 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
           <span className="header-slogan">Repuestos al mejor precio</span>
         </div>
 
-        {/* CENTRO: Buscador (Se oculta en móvil para ir dentro del menú) */}
         <div className="header-center">
           <div className="search-wrapper">
             <input type="text" placeholder="Buscar producto..." />
@@ -33,20 +58,18 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
           </div>
         </div>
 
-        {/* DERECHA: Nav + Acciones */}
         <div className="header-right">
           <nav className={`header-nav ${isMenuOpen ? 'open' : ''}`}>
             <div className="mobile-nav-header">
               <span className="logo-brand">S&O</span>
               <button className="close-menu" onClick={() => setIsMenuOpen(false)}><X size={32} /></button>
             </div>
-            
-            {/* Buscador dentro del menú móvil */}
+
             <div className="mobile-search">
-                <div className="search-wrapper">
-                    <input type="text" placeholder="¿Qué buscas?" />
-                    <Search className="search-icon" size={20} />
-                </div>
+              <div className="search-wrapper">
+                <input type="text" placeholder="¿Qué buscas?" />
+                <Search className="search-icon" size={20} />
+              </div>
             </div>
 
             <ul>
@@ -54,17 +77,39 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
               <li><Link to="/productos" onClick={() => setIsMenuOpen(false)}>Productos</Link></li>
               <li><Link to="/nosotros" onClick={() => setIsMenuOpen(false)}>Nosotros</Link></li>
               <li><Link to="/contacto" onClick={() => setIsMenuOpen(false)}>Contacto</Link></li>
+              {!usuario && <li><Link to="/login" state={fromState.state} onClick={() => setIsMenuOpen(false)}>Iniciar sesión</Link></li>}
+              {usuario && <li><Link to="/perfil" onClick={() => setIsMenuOpen(false)}>Mi perfil</Link></li>}
             </ul>
           </nav>
-          
+
           <div className="header-actions">
-            <button className="icon-btn cart-btn">
+            <button className="icon-btn cart-btn" type="button">
               <ShoppingBag size={26} />
               <span className="cart-count">0</span>
             </button>
-            <button className="icon-btn profile-btn">
-              <User size={26} />
-            </button>
+
+            {usuario ? (
+              <div
+                className="profile-menu"
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+              >
+                <Link to="/perfil" className="profile-initial">
+                  {initial || <User size={20} />}
+                </Link>
+                {dropdownOpen && (
+                  <div className="profile-dropdown">
+                    <Link to="/perfil">Mi perfil</Link>
+                    <button type="button" onClick={logout}>Cerrar sesión</button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <Link to="/login" state={fromState.state} className="icon-btn profile-btn">
+                <User size={26} />
+              </Link>
+            )}
+
             <button className="menu-toggle" onClick={() => setIsMenuOpen(true)}>
               <Menu size={30} />
             </button>

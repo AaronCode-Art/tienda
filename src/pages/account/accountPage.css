@@ -1,0 +1,201 @@
+﻿.account-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f2f8ff;
+}
+
+.account-content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.account-card {
+  width: min(1100px, 100%);
+  max-width: 1120px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 28px 80px rgba(15, 31, 64, 0.12);
+}
+
+.account-card-wide {
+  padding: 1.5rem;
+}
+
+.account-tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.75rem;
+}
+
+.account-tabs button {
+  border: 1px solid #d2dce6;
+  background: transparent;
+  padding: 1rem 1.25rem;
+  border-radius: 18px;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #2b3d5a;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.account-tabs button.active {
+  background: #1ec8b8;
+  border-color: #1ec8b8;
+  color: #ffffff;
+}
+
+.account-form-section {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.account-form-section h1 {
+  font-size: clamp(2rem, 2.5vw, 2.8rem);
+  margin: 0;
+}
+
+.account-form-section p {
+  color: #5f6d7a;
+  margin: 0;
+}
+
+.account-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.account-form label {
+  display: grid;
+  gap: 0.6rem;
+  font-weight: 600;
+  color: #29334d;
+}
+
+.account-form input,
+.account-form select {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 14px;
+  border: 1px solid #d6dde8;
+  background: #f8fbff;
+  font-size: 1rem;
+  color: #1a293a;
+}
+
+.account-form input:focus,
+.account-form select:focus {
+  outline: none;
+  border-color: #1ec8b8;
+  box-shadow: 0 0 0 4px rgba(30, 200, 184, 0.12);
+}
+
+.two-columns {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.account-submit-button {
+  width: fit-content;
+  padding: 1rem 1.4rem;
+  border: none;
+  border-radius: 14px;
+  background: #1ec8b8;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.account-submit-button:hover {
+  background: #0da796;
+  transform: translateY(-1px);
+}
+
+.account-conditions-box {
+  background: #f5fbff;
+  border: 1px solid #d9ecf7;
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+
+.account-conditions-box h2 {
+  margin: 0 0 0.75rem;
+  font-size: 1rem;
+  color: #173852;
+}
+
+.account-conditions-box ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: #3c536d;
+  line-height: 1.8;
+}
+
+.account-conditions-box ul li {
+  margin-bottom: 0.55rem;
+}
+
+.password-checklist {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 1rem;
+  color: #3c536d;
+}
+
+.password-checklist p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.password-checklist p.valid {
+  color: #107c57;
+}
+
+.account-message {
+  margin-top: 1rem;
+  padding: 1rem 1.25rem;
+  border-radius: 16px;
+  font-weight: 600;
+}
+
+.account-error {
+  background: rgba(224, 48, 48, 0.12);
+  color: #b00020;
+  border: 1px solid rgba(224, 48, 48, 0.2);
+}
+
+.account-success {
+  background: rgba(16, 124, 87, 0.12);
+  color: #107c57;
+  border: 1px solid rgba(16, 124, 87, 0.2);
+}
+
+@media (max-width: 900px) {
+  .account-form {
+    gap: 1rem;
+  }
+
+  .two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .account-content {
+    padding: 1rem;
+  }
+
+  .account-card {
+    border-radius: 18px;
+    padding: 1.5rem;
+  }
+}

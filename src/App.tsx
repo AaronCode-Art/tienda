@@ -6,6 +6,8 @@ import ProductoporCatalogo from './pages/productoporcatalogo/ProductoporCatalogo
 import NosotrosPages from './pages/nosotros/NosotrosPages';
 import ContactoPage from './pages/contactos/ContactoPage';
 import DetalleProductoPage from './pages/detalle/DetalleProductoPage';
+import AccountPage from './pages/account/AccountPage';
+import PerfilPage from './pages/perfil/PerfilPage';
 
 // Importamos tus páginas y componentes
 import InicioPage from './pages/inicio/InicioPage';
@@ -37,10 +39,8 @@ const App: React.FC = () => {
         <Route path="/contacto" element={<ContactoPage />} />
         <Route path="/categoria/:categoriaId" element={<ProductoporCatalogo />} />
         <Route path="/producto/:id" element={<DetalleProductoPage />} />
-        {/* Aquí añadiremos más rutas pronto, por ejemplo:
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/productos" element={<ProductosPage />} />
-        */}
+        <Route path="/perfil" element={<PerfilPage />} />
+        <Route path="/login" element={<AccountPage />} />
       </Routes>
     </Router>
   );
