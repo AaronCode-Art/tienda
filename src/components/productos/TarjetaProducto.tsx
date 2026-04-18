@@ -1,12 +1,36 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useAuth } from '../../hooks/useAuth';
+import pedidosService from '../../services/PedidosService';
+import type { Producto } from '../../types/producto';
 import './TarjetaProducto.css';
 
 interface TarjetaProps {
-  producto: any;
+  producto: Producto;
 }
 
 const TarjetaProducto: React.FC<TarjetaProps> = ({ producto }) => {
+  const { usuario } = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleComprar = async () => {
+    if (!usuario) {
+      alert('Inicie sesión para completar la compra.');
+      navigate('/login', { state: { from: location.pathname } });
+      return;
+    }
+
+    try {
+      await pedidosService.createPedidoConDetalle(usuario.id, producto);
+      window.dispatchEvent(new Event('pendingOrdersUpdated'));
+      alert('Compra registrada como pendiente. Si ya tenías un pedido pendiente, se actualizó la cantidad del mismo producto.');
+    } catch (error) {
+      console.error('Error al crear el pedido:', error);
+      alert('No se pudo registrar el pedido. Intenta más tarde.');
+    }
+  };
+
   return (
     <div className="tarjeta-producto-premium">
       {/* BADGE DE STOCK */}
@@ -34,10 +58,7 @@ const TarjetaProducto: React.FC<TarjetaProps> = ({ producto }) => {
       <div className="tarjeta-footer">
         <p className="tarjeta-precio">S/ {producto.precio.toFixed(2)}</p>
         <br/>
-        <button 
-          className="btn-comprar" 
-          onClick={() => alert('Función de compra próximamente')}
-        >
+        <button className="btn-comprar" onClick={handleComprar}>
           Comprar
         </button>
       </div>

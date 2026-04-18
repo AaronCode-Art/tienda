@@ -3,7 +3,7 @@
     {
       "id": "c72941",
       "nombre": "Repuestos PC",
-      "imagenUrl": "/imagenes/categorias/pc.jpg"
+      "imagenUrl": "/imagenes/productos/pc/pc.png"
     },
     {
       "id": "c10385",
@@ -198,7 +198,7 @@
       "contrasena": "maria2024"
     },
     {
-      "id": "u3",
+      "id": "u49201",
       "nombre": "Carlos",
       "apellido": "Rodríguez",
       "dni": "45678912",
@@ -222,6 +222,7 @@
       "contrasena": "admin_ana"
     },
     {
+      "id": "sJO2Nnm",
       "nombre": "Pedro",
       "apellido": "López",
       "dni": "98765432",
@@ -230,8 +231,19 @@
       "referencia": "Cerca a la universidad",
       "codigo_postal": "15088",
       "correo": "pedro.lopez@email.com",
-      "contrasena": "Segura1B4",
-      "id": "sJO2Nnm"
+      "contrasena": "Segura1B4"
+    },
+    {
+      "id": "9ovAXF2",
+      "nombre": "a",
+      "apellido": "a",
+      "dni": "21332131",
+      "distrito": "Surco",
+      "direccion": "adsad",
+      "referencia": "sasdadasdsa",
+      "codigo_postal": "15487",
+      "correo": "a@gmail.com",
+      "contrasena": "Aaronbl2003"
     }
   ],
   "pedidos": [
@@ -239,7 +251,8 @@
       "id": "o88214",
       "usuario_id": "u49201",
       "fecha": "2024-05-20T14:30:00",
-      "total": 310.00,
+      "total": 395,
+      "estado_de_compra": "pagado",
       "tipo_entrega": "recojo_tienda",
       "metodo_pago": "tarjeta",
       "estado_actual": "listo_para_recoger",
@@ -255,7 +268,7 @@
           "mensaje": "Estamos empaquetando tus productos"
         },
         {
-          "estado": "listo_para_recoger",
+          "estado": "listo para recoger",
           "fecha": "2024-05-20T16:20:00",
           "mensaje": "Ya puedes pasar por la tienda de Miraflores"
         }
@@ -263,9 +276,10 @@
     },
     {
       "id": "o10952",
-      "usuario_id": "u11845",
+      "usuario_id": "u2",
       "fecha": "2024-05-21T09:00:00",
-      "total": 155.00,
+      "total": 155,
+      "estado_de_compra": "pendiente",
       "tipo_entrega": "delivery",
       "metodo_pago": "yape",
       "estado_actual": "en_transito",
@@ -274,44 +288,116 @@
         "distrito": "Los Olivos",
         "referencia": "Frente al mercado central"
       },
+      "seguimiento": []
+    },
+    {
+      "usuario_id": "9ovAXF2",
+      "fecha": "2026-04-18T06:30:12.714Z",
+      "total": 740,
+      "tipo_entrega": "delivery",
+      "metodo_pago": "yape",
+      "estado_actual": "confirmado",
+      "estado_de_compra": "pagado",
       "seguimiento": [
         {
+          "estado": "pendiente",
+          "fecha": "2026-04-18T06:30:12.715Z",
+          "mensaje": "Pedido registrado y pendiente de procesamiento."
+        },
+        {
           "estado": "confirmado",
-          "fecha": "2024-05-21T09:05:00",
-          "mensaje": "Pedido confirmado"
-        },
-        {
-          "estado": "en_proceso",
-          "fecha": "2024-05-21T10:00:00",
-          "mensaje": "Preparando el paquete para el repartidor"
-        },
-        {
-          "estado": "en_transito",
-          "fecha": "2024-05-21T11:30:00",
-          "mensaje": "El motorizado está en camino a tu domicilio"
-        },
-        {
-          "estado": "llegando",
-          "fecha": "2024-05-21T11:45:00",
-          "mensaje": "El repartidor está a pocas cuadras"
+          "fecha": "2026-04-18T06:43:03.262Z",
+          "mensaje": "Pedido confirmado y en proceso de preparación."
         }
-      ]
+      ],
+      "id": "o1776493812715",
+      "direccion_envio": {
+        "calle": "adsad",
+        "distrito": "Surco",
+        "referencia": "sasdadasdsa"
+      }
+    },
+    {
+      "usuario_id": "9ovAXF2",
+      "fecha": "2026-04-18T06:30:23.759Z",
+      "total": 605,
+      "tipo_entrega": "delivery",
+      "metodo_pago": "yape",
+      "estado_actual": "pendiente",
+      "estado_de_compra": "pendiente",
+      "seguimiento": [
+        {
+          "estado": "pendiente",
+          "fecha": "2026-04-18T06:30:23.759Z",
+          "mensaje": "Pedido registrado y pendiente de procesamiento."
+        }
+      ],
+      "id": "o1776493823759"
+    },
+    {
+      "usuario_id": "9ovAXF2",
+      "fecha": "2026-04-18T06:30:40.454Z",
+      "total": 185,
+      "tipo_entrega": "delivery",
+      "metodo_pago": "yape",
+      "estado_actual": "pendiente",
+      "estado_de_compra": "pendiente",
+      "seguimiento": [
+        {
+          "estado": "pendiente",
+          "fecha": "2026-04-18T06:30:40.454Z",
+          "mensaje": "Pedido registrado y pendiente de procesamiento."
+        }
+      ],
+      "id": "o1776493840454"
     }
   ],
   "detalle_pedidos": [
     {
       "id": "d00123",
       "pedido_id": "o88214",
-      "producto_id": "p99201",
+      "producto_id": "p14902",
       "cantidad": 1,
-      "precio_unitario": 310.00
+      "precio_unitario": 210,
+      "subtotal": 210
+    },
+    {
+      "id": "d00125",
+      "pedido_id": "o88214",
+      "producto_id": "p66237",
+      "cantidad": 1,
+      "precio_unitario": 185,
+      "subtotal": 185
     },
     {
       "id": "d00124",
       "pedido_id": "o10952",
       "producto_id": "p22485",
       "cantidad": 1,
-      "precio_unitario": 155.00
+      "precio_unitario": 155,
+      "subtotal": 155
+    },
+    {
+      "id": "d00125",
+      "pedido_id": "o10952",
+      "producto_id": "p66237",
+      "cantidad": 3,
+      "precio_unitario": 185,
+      "subtotal": 555
+    },
+    {
+      "pedido_id": "o1776493812715",
+      "producto_id": "p66237",
+      "cantidad": 2,
+      "precio_unitario": 185,
+      "id": "d1776494096600307"
+    },
+    {
+      "pedido_id": "o1776493823759",
+      "producto_id": "p14902",
+      "cantidad": 2,
+      "precio_unitario": 210,
+      "id": "d1776494635016173"
     }
   ]
 }

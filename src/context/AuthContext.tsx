@@ -4,6 +4,7 @@ import { usuarioService } from '../services/UsuarioService';
 
 interface AuthContextType {
   usuario: Usuario | null;
+  authReady: boolean;
   login: (correo: string, contrasena: string) => Promise<boolean>;
   logout: () => void;
 }
@@ -12,6 +13,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [usuario, setUsuario] = useState<Usuario | null>(null);
+  const [authReady, setAuthReady] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem('authUsuario');
@@ -22,6 +24,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
         localStorage.removeItem('authUsuario');
       }
     }
+    setAuthReady(true);
   }, []);
 
   const login = async (correo: string, contrasena: string): Promise<boolean> => {
@@ -40,7 +43,7 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   };
 
   return (
-    <AuthContext.Provider value={{ usuario, login, logout }}>
+    <AuthContext.Provider value={{ usuario, authReady, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

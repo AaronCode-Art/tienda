@@ -8,6 +8,8 @@ import ContactoPage from './pages/contactos/ContactoPage';
 import DetalleProductoPage from './pages/detalle/DetalleProductoPage';
 import AccountPage from './pages/account/AccountPage';
 import PerfilPage from './pages/perfil/PerfilPage';
+import PedidosPage from './pages/pedidos/PedidosPage';
+import CarritoPage from './pages/carrito/CarritoPage';
 
 // Importamos tus páginas y componentes
 import InicioPage from './pages/inicio/InicioPage';
@@ -40,6 +42,8 @@ const App: React.FC = () => {
         <Route path="/categoria/:categoriaId" element={<ProductoporCatalogo />} />
         <Route path="/producto/:id" element={<DetalleProductoPage />} />
         <Route path="/perfil" element={<PerfilPage />} />
+        <Route path="/pedidos" element={<PedidosPage />} />
+        <Route path="/carrito" element={<CarritoPage />} />
         <Route path="/login" element={<AccountPage />} />
       </Routes>
     </Router>

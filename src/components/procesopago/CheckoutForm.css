@@ -1,0 +1,59 @@
+.checkout-form-section {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-form-section h2 {
+  margin-bottom: 12px;
+  font-size: 1.35rem;
+}
+
+.checkout-form-section p {
+  margin-bottom: 20px;
+  color: #4b5563;
+}
+
+.checkout-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-row {
+  display: grid;
+  gap: 8px;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #111827;
+}
+
+.form-row input {
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 0.95rem;
+}
+
+.form-radio-group {
+  gap: 10px;
+}
+
+.form-radio-group label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.pickup-note {
+  margin-top: 0;
+  color: #2563eb;
+  font-size: 0.95rem;
+}
+
+.status-error {
+  color: #b91c1c;
+}

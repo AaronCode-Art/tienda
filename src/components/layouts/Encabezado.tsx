@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ShoppingBag, User, Search, Menu, X } from 'lucide-react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../hooks/useAuth';
+import { usePendingOrdersCount } from '../../hooks/usePendingOrdersCount';
 import './encabezado.css';
 
 interface BannerProps {
@@ -13,7 +14,9 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const dropdownTimeoutRef = useRef<number | null>(null);
   const location = useLocation();
-  const { usuario, logout } = useAuth();
+  const { usuario, authReady, logout } = useAuth();
+  const navigate = useNavigate();
+  const { count: pendingCount } = usePendingOrdersCount(usuario?.id ?? null, authReady);
 
   const fromState = { state: { from: location.pathname } };
   const initial = usuario?.nombre?.charAt(0).toUpperCase() ?? '';
@@ -77,15 +80,14 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
               <li><Link to="/productos" onClick={() => setIsMenuOpen(false)}>Productos</Link></li>
               <li><Link to="/nosotros" onClick={() => setIsMenuOpen(false)}>Nosotros</Link></li>
               <li><Link to="/contacto" onClick={() => setIsMenuOpen(false)}>Contacto</Link></li>
-              {!usuario && <li><Link to="/login" state={fromState.state} onClick={() => setIsMenuOpen(false)}>Iniciar sesión</Link></li>}
-              {usuario && <li><Link to="/perfil" onClick={() => setIsMenuOpen(false)}>Mi perfil</Link></li>}
+              <li><Link to="/pedidos" onClick={() => setIsMenuOpen(false)}>Ver estado del pedido</Link></li>
             </ul>
           </nav>
 
           <div className="header-actions">
-            <button className="icon-btn cart-btn" type="button">
+            <button className="icon-btn cart-btn" type="button" onClick={() => navigate('/carrito')}>
               <ShoppingBag size={26} />
-              <span className="cart-count">0</span>
+              <span className="cart-count">{pendingCount}</span>
             </button>
 
             {usuario ? (
@@ -125,7 +127,7 @@ const Encabezado: React.FC<BannerProps> = ({ showBanner = true }) => {
             <Link to="/productos" className="btn-banner-action">ver catálogo</Link>
           </div>
           <div className="banner-image-side">
-            <img src="../src/assets/hero-hardware.png" alt="Hardware" className="hardware-render" />
+            <img src="../src/imagenes/banner/bn.png" alt="Hardware" className="hardware-render" />
           </div>
         </main>
       )}

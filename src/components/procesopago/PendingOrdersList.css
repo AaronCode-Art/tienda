@@ -1,0 +1,75 @@
+.pending-orders-list {
+  padding: 24px;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+}
+
+.pending-orders-list h2 {
+  margin-bottom: 18px;
+  font-size: 1.35rem;
+}
+
+.pending-orders-cards {
+  display: grid;
+  gap: 16px;
+}
+
+.pending-order-card {
+  border: 1px solid #e0e4ec;
+  border-radius: 16px;
+  padding: 18px;
+  background: #f8faff;
+  text-align: left;
+  cursor: pointer;
+}
+
+.pending-order-card.selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.pending-order-card:hover {
+  background: #edf2ff;
+}
+
+.pending-order-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.pending-order-body p {
+  margin: 4px 0;
+  color: #333;
+}
+
+.pending-orders-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-primary {
+  background: #4f46e5;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.btn-primary:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.status-message,
+.status-error {
+  margin-bottom: 16px;
+}
+
+.status-error {
+  color: #b91c1c;
+}
