@@ -21,7 +21,7 @@ const SeccionCategorias: React.FC<PropsCategorias> = ({ categorias }) => {
               to={`/categoria/${categoria.id}`} 
               className="categoria-enlace"
             >
-              <img 
+              <img  
                 src={categoria.imagenUrl} 
                 alt={categoria.nombre} 
                 className="categoria-imagen" 

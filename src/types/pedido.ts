@@ -33,4 +33,10 @@ export interface Pedido {
   direccion_envio?: DireccionEnvio;
   seguimiento: SeguimientoPedido[];
   detalles?: DetallePedido[];
+
+  tipo_comprobante?: 'boleta' | 'factura';
+  dni?: string | null;
+  ruc?: string | null;
+  razon_social?: string | null;
+  direccion_fiscal?: string | null;
 }
